@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="VORTEX - Premium Women's Sportswear. Experience high-end performance activewear powered by visual energy and dynamic GSAP motion design.">
+  <title>VORTEX // Premium Women's Sportswear</title>
+  
+  <!-- FontAwesome for Premium Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Custom Cursor Elements -->
+  <div class="custom-cursor">
+    <div class="custom-cursor-text">VIEW</div>
+  </div>
+  <div class="custom-cursor-dot"></div>
+
+  <!-- Background Aesthetics: Vertical Grid Lines -->
+  <div class="grid-lines">
+    <div class="grid-line-item"></div>
+    <div class="grid-line-item"></div>
+    <div class="grid-line-item"></div>
+    <div class="grid-line-item"></div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <header>
+    <a href="#" class="logo interactive">
+      VORTEX<span>.</span>
+    </a>
+    <nav>
+      <a href="#hero" class="active interactive">Home</a>
+      <a href="#collections" class="interactive">Collections</a>
+      <a href="#technology" class="interactive">Technology</a>
+      <a href="#stats" class="interactive">Stats</a>
+    </nav>
+    <div class="nav-right">
+      <button class="btn-header interactive">Shop Now</button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <div class="hero-tag">
+        <span class="dot"></span>
+        New Performance Drop
+      </div>
+      <h1>
+        Power <br>
+        In Every <br>
+        <span class="pink-text">Motion.</span>
+      </h1>
+      <p class="hero-desc">
+        Engineered for high-intensity training. Crafted with ultra-breathable compression knit to empower your stride, your lift, and your recovery.
+      </p>
+      <div class="hero-actions">
+        <button class="btn-primary interactive">Explore Collection</button>
+        <button class="btn-secondary interactive">Watch Movie</button>
+      </div>
+    </div>
+    
+    <div class="hero-visual">
+      <div class="hero-image-wrapper interactive" data-cursor-effect="view">
+        <img src="assets/hero_sportswear.png" alt="Vortex Activewear Hero" id="hero-img">
+      </div>
+      <div class="hero-accent-circle"></div>
+    </div>
+  </section>
+
+  <!-- Horizontal Scroll Section (Desktop) -->
+  <div class="horizontal-scroll-section" id="collections">
+    <div class="horizontal-outer">
+      
+      <!-- Slide 1: Welcome / Introduction -->
+      <div class="horizontal-slide">
+        <div class="slide-intro">
+          <h2>The Couture <br>Of <span>Action.</span></h2>
+          <p>
+            Designing high-performance apparel that merges aesthetics with pure utility. Scroll to reveal our engineering staples.
+          </p>
+          <div class="scroll-indicator">
+            <span>Scroll Down to Slide</span>
+            <div class="scroll-line"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 2: Product Leggings -->
+      <div class="horizontal-slide">
+        <div class="product-showcase">
+          <div class="product-img-wrapper interactive" data-cursor-effect="view">
+            <img src="assets/leggings_set.png" alt="Aura Leggings Set">
+          </div>
+          <div class="product-info">
+            <span class="product-number">01</span>
+            <span class="product-category">Compression</span>
+            <h3>Aura Leggings</h3>
+            <p class="product-desc">
+              High-waisted, zero-slip support crafted from recycled moisture-wicking microfibers. Designed to feel like a second skin during heavy lifts.
+            </p>
+            <div class="product-specs">
+              <div class="spec-item">
+                <span class="spec-label">Material</span>
+                <span class="spec-val">82% EcoPoly</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Fit</span>
+                <span class="spec-val">Ultra Compression</span>
+              </div>
+            </div>
+            <button class="btn-primary interactive">Pre-order Now</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3: Product Jacket -->
+      <div class="horizontal-slide">
+        <div class="product-showcase">
+          <div class="product-img-wrapper interactive" data-cursor-effect="view">
+            <img src="assets/running_jacket.png" alt="Vortex Thermo Jacket">
+          </div>
+          <div class="product-info">
+            <span class="product-number">02</span>
+            <span class="product-category">Heat Control</span>
+            <h3>Reflex Jacket</h3>
+            <p class="product-desc">
+              Wind-resistant, water-repellent shell featuring 3M high-vis reflective panels for late evening road running and outdoor cardio sessions.
+            </p>
+            <div class="product-specs">
+              <div class="spec-item">
+                <span class="spec-label">Weight</span>
+                <span class="spec-val">190g Ultra Light</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Weather</span>
+                <span class="spec-val">Wind/Rain Proof</span>
+              </div>
+            </div>
+            <button class="btn-primary interactive">Pre-order Now</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 4: Fabric detail -->
+      <div class="horizontal-slide">
+        <div class="product-showcase">
+          <div class="product-img-wrapper interactive" data-cursor-effect="view">
+            <img src="assets/tech_fabric.png" alt="Vortex technical fabric">
+          </div>
+          <div class="product-info">
+            <span class="product-number">03</span>
+            <span class="product-category">Fabric Innovation</span>
+            <h3>AeroKnit Mesh</h3>
+            <p class="product-desc">
+              Our patented fiber structure promotes rapid perspiration dissipation. Micro-ventilation zones mapped specifically to metabolic heat centers.
+            </p>
+            <div class="product-specs">
+              <div class="spec-item">
+                <span class="spec-label">Airflow</span>
+                <span class="spec-val">+340% Boost</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Stretch</span>
+                <span class="spec-val">4-Way Hyper</span>
+              </div>
+            </div>
+            <button class="btn-primary interactive">View Tech Specs</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Fallback Vertical Product List for Mobile Devices (max-width: 768px) -->
+  <div class="horizontal-scroll-fallback">
+    <!-- Fallback Product 1 -->
+    <div class="fallback-product">
+      <span class="product-number">01</span>
+      <span class="product-category">Compression</span>
+      <h3>Aura Leggings</h3>
+      <p class="product-desc">
+        High-waisted, zero-slip support crafted from recycled moisture-wicking microfibers. Designed to feel like a second skin.
+      </p>
+    </div>
+    <!-- Fallback Product 2 -->
+    <div class="fallback-product" style="margin-top: 40px;">
+      <span class="product-number">02</span>
+      <span class="product-category">Heat Control</span>
+      <h3>Reflex Jacket</h3>
+      <p class="product-desc">
+        Wind-resistant, water-repellent shell featuring 3M high-vis reflective panels for late evening road running.
+      </p>
+    </div>
+    <!-- Fallback Product 3 -->
+    <div class="fallback-product" style="margin-top: 40px;">
+      <span class="product-number">03</span>
+      <span class="product-category">Fabric Innovation</span>
+      <h3>AeroKnit Mesh</h3>
+      <p class="product-desc">
+        Our patented fiber structure promotes rapid perspiration dissipation. Micro-ventilation zones mapped specifically to metabolic heat centers.
+      </p>
+    </div>
+  </div>
+
+  <!-- Scroll Linked Text Reveal Section -->
+  <section class="text-reveal-section" id="reveal-text-section">
+    <div class="reveal-container">
+      <span class="reveal-tag">Engineered Integrity</span>
+      <h2 class="text-reveal-heading">
+        <span class="reveal-text-layer" id="reveal-text-1">
+          We believe sportswear should feel like a second skin.
+          <span class="reveal-text-fill" id="reveal-fill-1">We believe sportswear should feel like a second skin.</span>
+        </span>
+        <br>
+        <span class="reveal-text-layer" id="reveal-text-2">
+          Empowering dynamic action without restriction.
+          <span class="reveal-text-fill pink-fill" id="reveal-fill-2">Empowering dynamic action without restriction.</span>
+        </span>
+      </h2>
+    </div>
+  </section>
+
+  <!-- Technical Specs Cards Section -->
+  <section class="tech-section" id="technology">
+    <span class="reveal-tag" style="text-align: center;">Technical Innovations</span>
+    <h2 style="font-family: var(--font-heading); font-size: clamp(32px, 4vw, 56px); text-align: center; text-transform: uppercase; letter-spacing: -1px; margin-bottom: 20px;">
+      Engineered to Outperform
+    </h2>
+    <div class="tech-grid">
+      <!-- Tech Card 1 -->
+      <div class="tech-card interactive">
+        <div class="tech-icon"><i class="fa-solid fa-wind"></i></div>
+        <h3>AeroFlow Knit</h3>
+        <p>Advanced knit structures map hot zones on the body to offer maximum air permeability. Keeps you cool, even during explosive workouts.</p>
+      </div>
+      <!-- Tech Card 2 -->
+      <div class="tech-card interactive">
+        <div class="tech-icon"><i class="fa-solid fa-temperature-half"></i></div>
+        <h3>ThermaAdapt</h3>
+        <p>Smart thermal fabrics that expand or contract depending on ambient heat. Absorbs heat when warm, and insulates when temperatures drop.</p>
+      </div>
+      <!-- Tech Card 3 -->
+      <div class="tech-card interactive">
+        <div class="tech-icon"><i class="fa-solid fa-bolt-lightning"></i></div>
+        <h3>V-Flex Knit</h3>
+        <p>Targeted medical-grade muscle compression wraps major muscle groups to reduce lactic acid buildup and minimize muscle fatigue.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Animated Stats Grid -->
+  <section class="stats-section" id="stats">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-num" data-val="98">0<span>%</span></div>
+        <span class="stat-label">Eco-Polymer</span>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num" data-val="190">0<span>g</span></div>
+        <span class="stat-label">Fabric Weight</span>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num" data-val="15">0<span>k+</span></div>
+        <span class="stat-label">Elite Athletes</span>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num" data-val="100">0<span>%</span></div>
+        <span class="stat-label">Squat Proof</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="cta-container">
+      <h2>Unleash <br>Your <span>Energy.</span></h2>
+      <p class="cta-desc">
+        Subscribe to receive notification of exclusive limited edition performance collections and private pre-sale opportunities.
+      </p>
+      <button class="btn-primary interactive" style="padding: 20px 48px; font-size: 16px;">
+        Join Vortex Club
+      </button>
+    </div>
+    <div class="hero-accent-circle" style="top: 20%; left: 10%; width: 350px; height: 350px; background: radial-gradient(circle, rgba(255, 42, 95, 0.1) 0%, transparent 70%);"></div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-copy">
+      &copy; 2026 VORTEX ATHLETICS. All performance engineered.
+    </div>
+    <div class="footer-socials">
+      <a href="#" class="interactive"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#" class="interactive"><i class="fa-brands fa-youtube"></i></a>
+      <a href="#" class="interactive"><i class="fa-brands fa-tiktok"></i></a>
+      <a href="#" class="interactive"><i class="fa-brands fa-pinterest"></i></a>
+    </div>
+  </footer>
+
+  <!-- Scripts CDN -->
+  <!-- Lenis Smooth Scroll -->
+  <script src="https://unpkg.com/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script>
+  <!-- GSAP Core -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <!-- GSAP ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <!-- Custom JS Logic -->
+  <script src="main.js"></script>
+</body>
+</html>
