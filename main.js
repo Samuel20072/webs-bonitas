@@ -91,18 +91,32 @@ function initHeroAnimations() {
   // Set initial hidden states to prevent flash of unstyled content (FOUC)
   gsap.set('header', { y: -60, opacity: 0 });
   gsap.set('.hero-tag', { y: 20, opacity: 0 });
-  gsap.set('.hero-content h1', { y: 40, opacity: 0 });
+  gsap.set('.line-inner', { y: '100%' });
   gsap.set('.hero-desc', { y: 25, opacity: 0 });
   gsap.set('.hero-actions', { y: 20, opacity: 0 });
-  gsap.set('.hero-image-wrapper', { scale: 0.9, opacity: 0 });
+  
+  // For the wipe effect, wrapper starts collapsed in clip-path, image starts scaled up, opacity 0
+  gsap.set('.hero-image-wrapper', { 
+    opacity: 0,
+    clipPath: 'polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)',
+    rotate: -1 // start with slight negative tilt for visual dynamics
+  });
+  gsap.set('#hero-img', { scale: 1.4 });
   
   heroTl
     .to('header', { y: 0, opacity: 1, duration: 1.2, ease: 'power4.out' })
-    .to('.hero-tag', { y: 0, opacity: 1, duration: 0.8, ease: 'power3.out' }, '-=0.8')
-    .to('.hero-content h1', { y: 0, opacity: 1, duration: 1, ease: 'power4.out' }, '-=0.6')
-    .to('.hero-desc', { y: 0, opacity: 1, duration: 0.8, ease: 'power3.out' }, '-=0.8')
-    .to('.hero-actions', { y: 0, opacity: 1, duration: 0.8, ease: 'power3.out' }, '-=0.8')
-    .to('.hero-image-wrapper', { scale: 1, opacity: 1, duration: 1.4, ease: 'power4.out' }, '-=1');
+    .to('.hero-tag', { y: 0, opacity: 1, duration: 0.8, ease: 'power3.out' }, '-=0.9')
+    .to('.line-inner', { y: '0%', duration: 1.2, stagger: 0.12, ease: 'power4.out' }, '-=0.7')
+    .to('.hero-image-wrapper', { 
+      opacity: 1,
+      clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)', 
+      rotate: 2, 
+      duration: 1.8, 
+      ease: 'power3.inOut' 
+    }, '-=1.3')
+    .to('#hero-img', { scale: 1.1, duration: 1.8, ease: 'power3.out' }, '-=1.8')
+    .to('.hero-desc', { y: 0, opacity: 1, duration: 0.8, ease: 'power3.out' }, '-=1.2')
+    .to('.hero-actions', { y: 0, opacity: 1, duration: 0.8, ease: 'power3.out' }, '-=1.0');
 
   // Parallax subtle effect on Hero Image on scroll
   gsap.to('#hero-img', {
@@ -114,6 +128,66 @@ function initHeroAnimations() {
       end: 'bottom top',
       scrub: true
     }
+  });
+
+  // Enable tilt interactions only after the load animation finishes
+  heroTl.eventCallback('onComplete', () => {
+    initHeroTilt();
+  });
+}
+
+function initHeroTilt() {
+  if (window.innerWidth < 1024) return;
+  
+  const heroVisual = document.querySelector('.hero-visual');
+  const imageWrapper = document.querySelector('.hero-image-wrapper');
+  const heroImg = document.querySelector('#hero-img');
+  
+  if (!heroVisual || !imageWrapper) return;
+  
+  heroVisual.addEventListener('mousemove', (e) => {
+    const rect = heroVisual.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width / 2;
+    const y = e.clientY - rect.top - rect.height / 2;
+    
+    // Max tilt angles: 12 deg
+    const rotateX = -(y / rect.height) * 12;
+    const rotateY = (x / rect.width) * 12;
+    
+    gsap.to(imageWrapper, {
+      rotateX: rotateX,
+      rotateY: rotateY + 2, // Maintain the 2deg slant from styling
+      x: (x / rect.width) * 20,
+      y: (y / rect.height) * 20,
+      duration: 0.6,
+      ease: 'power2.out'
+    });
+
+    // Opposite parallax shift inside the image for visual depth
+    gsap.to(heroImg, {
+      x: -(x / rect.width) * 15,
+      y: -(y / rect.height) * 15,
+      duration: 0.6,
+      ease: 'power2.out'
+    });
+  });
+  
+  heroVisual.addEventListener('mouseleave', () => {
+    gsap.to(imageWrapper, {
+      rotateX: 0,
+      rotateY: 2,
+      x: 0,
+      y: 0,
+      duration: 1,
+      ease: 'power3.out'
+    });
+
+    gsap.to(heroImg, {
+      x: 0,
+      y: 0,
+      duration: 1,
+      ease: 'power3.out'
+    });
   });
 }
 initHeroAnimations();
@@ -222,17 +296,20 @@ initTextReveal();
 // 6. Technology Cards Staggered Reveal
 // ==========================================
 function initTechReveal() {
-  gsap.from('.tech-card', {
-    opacity: 0,
-    y: 60,
-    duration: 1,
-    stagger: 0.2,
-    ease: 'power4.out',
-    scrollTrigger: {
-      trigger: '.tech-section',
-      start: 'top 80%',
-      toggleActions: 'play none none reverse'
-    }
+  const cards = gsap.utils.toArray('.tech-card');
+  cards.forEach((card, index) => {
+    gsap.from(card, {
+      opacity: 0,
+      y: 50,
+      duration: 0.8,
+      delay: index * 0.1, // micro-stagger for desktop alignment
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: card,
+        start: 'top 85%',
+        toggleActions: 'play none none none' // keep cards visible once triggered
+      }
+    });
   });
 }
 initTechReveal();

@@ -306,19 +306,30 @@ section {
   100% { transform: scale(1); opacity: 1; }
 }
 
-.hero-content h1 {
+.hero-content h1, .hero-title {
   font-family: var(--font-heading);
   font-size: clamp(48px, 6.5vw, 100px);
-  line-height: 0.9;
+  line-height: 0.95;
   font-weight: 800;
   text-transform: uppercase;
   margin-bottom: 30px;
   letter-spacing: -2px;
 }
 
-.hero-content h1 span.pink-text {
+.hero-content h1 span.pink-text, .hero-title span.pink-text {
   color: var(--accent-pink);
   text-shadow: 0 0 30px rgba(255, 42, 95, 0.2);
+}
+
+.line-wrapper {
+  display: block;
+  overflow: hidden;
+}
+
+.line-inner {
+  display: block;
+  transform: translateY(100%);
+  will-change: transform;
 }
 
 .hero-desc {
@@ -400,6 +411,7 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
+  perspective: 1500px;
 }
 
 .hero-image-wrapper {
@@ -411,13 +423,17 @@ section {
   border: 1px solid rgba(255,255,255,0.1);
   box-shadow: 0 30px 60px rgba(0,0,0,0.5);
   transform: rotate(2deg);
+  clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+  transform-style: preserve-3d;
+  will-change: transform, clip-path;
 }
 
 .hero-image-wrapper img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transform: scale(1.1);
+  transform: scale(1.35);
+  will-change: transform;
 }
 
 .hero-image-wrapper::after {
@@ -682,10 +698,39 @@ section {
 /* Technical Specs section */
 .tech-section {
   background-color: var(--bg-sec-color);
-  padding: 10vh 5vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  padding: 12vh 5vw;
+  display: block;
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+.tech-section::before {
+  content: 'VORTEX';
+  position: absolute;
+  top: 2%;
+  left: -2%;
+  font-family: var(--font-heading);
+  font-size: clamp(100px, 15vw, 220px);
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.012);
+  line-height: 0.8;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.tech-section::after {
+  content: 'LABS';
+  position: absolute;
+  bottom: 2%;
+  right: -2%;
+  font-family: var(--font-heading);
+  font-size: clamp(100px, 15vw, 220px);
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.012);
+  line-height: 0.8;
+  pointer-events: none;
+  z-index: 1;
 }
 
 .tech-grid {
@@ -693,7 +738,9 @@ section {
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
   width: 100%;
-  margin-top: 60px;
+  margin-top: 20px;
+  position: relative;
+  z-index: 2;
 }
 
 .tech-card {
