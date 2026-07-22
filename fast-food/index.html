@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="BOLT — Comida rápida con actitud. Hamburguesas brutales, papas doradas, sabor sin disculpas. Orden online.">
+  <title>BOLT // Fast Food With Attitude</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Curtain Loader -->
+  <div id="curtain-top"></div>
+  <div id="curtain-bot"></div>
+
+  <!-- Custom Cursor -->
+  <div class="c-cursor" id="cursor"></div>
+
+  <!-- Marquee Strip (top) -->
+  <div class="marquee-strip">
+    <div class="marquee-track" id="marquee-track">
+      <span class="marquee-item">BOLT BURGERS</span>
+      <span class="marquee-item">GOLDEN FRIES</span>
+      <span class="marquee-item">CRISPY STRIPS</span>
+      <span class="marquee-item">LOADED SHAKES</span>
+      <span class="marquee-item">OPEN 24H</span>
+      <span class="marquee-item">ORDER ONLINE</span>
+      <span class="marquee-item">BOLT BURGERS</span>
+      <span class="marquee-item">GOLDEN FRIES</span>
+      <span class="marquee-item">CRISPY STRIPS</span>
+      <span class="marquee-item">LOADED SHAKES</span>
+      <span class="marquee-item">OPEN 24H</span>
+      <span class="marquee-item">ORDER ONLINE</span>
+    </div>
+  </div>
+
+  <!-- Side Nav Pill -->
+  <nav class="nav-pill" id="nav-pill">
+    <div class="nav-pill-dot active" data-target="s-hero" title="Inicio"></div>
+    <div class="nav-pill-dot" data-target="s-split" title="El Beast"></div>
+    <div class="nav-pill-dot" data-target="s-board" title="Menú"></div>
+    <div class="nav-pill-dot" data-target="s-quote" title="Actitud"></div>
+    <div class="nav-pill-dot" data-target="s-order" title="Ordenar"></div>
+  </nav>
+
+  <!-- ═══════════ S1: HERO ═══════════ -->
+  <section class="section s-hero" id="s-hero">
+    <!-- Right-side food image + gradient overlay -->
+  <img src="assets/hero_burger.png" alt="" class="hero-food-img" id="hero-food-img" aria-hidden="true">
+  <div style="position:absolute;top:0;right:0;width:55%;height:100%;background:linear-gradient(to right, var(--red) 0%, rgba(227,0,11,0) 50%);pointer-events:none;z-index:1;"></div>
+
+    <div class="hero-title-wrap">
+      <h1 class="hero-big">
+        <span class="lw"><span class="li">COME</span></span>
+        <span class="lw"><span class="li accent">EN</span></span>
+        <span class="lw"><span class="li">SERIO.</span></span>
+      </h1>
+    </div>
+
+    <div class="hero-bottom">
+      <p class="hero-tagline">
+        Sin ingredientes de relleno. Sin pretextos. Solo sabor real que te golpea desde el primer bocado.
+      </p>
+      <div class="hero-cta">
+        <div class="hero-open-badge">
+          <div class="open-dot"></div>
+          Abierto ahora
+        </div>
+        <button class="btn-bolt">Ver menú</button>
+      </div>
+    </div>
+
+    <div class="hero-scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════ S2: SPLIT FEATURE ═══════════ -->
+  <section class="section s-split" id="s-split">
+    <div class="split-left">
+      <span class="split-label">Ítem estrella · Nº1 en ventas</span>
+      <h2>The<br><em>Beast</em><br>Burger</h2>
+      <p class="split-body">
+        Doble carne Angus de 200g, queso cheddar triple, cebolla caramelizada, pepinillos artesanales y nuestra salsa secreta de doce especias. Una sola vez no es suficiente.
+      </p>
+      <button class="btn-dark">Ordenar ahora</button>
+      <div class="split-num">01</div>
+    </div>
+    <div class="split-right">
+      <img src="assets/hero_burger.png" alt="The Beast Burger" id="split-img">
+    </div>
+  </section>
+
+  <!-- ═══════════ S3: MENU BOARD ═══════════ -->
+  <section class="section s-board" id="s-board">
+    <div class="board-header">
+      <h2 class="board-title">El <span>Menú</span></h2>
+      <span class="board-subtitle">Precios en MXN · IVA incluido</span>
+    </div>
+    <div class="board-list">
+      <div class="board-item">
+        <span class="board-item-idx">01</span>
+        <span class="board-item-name">The Beast Burger</span>
+        <div class="board-item-dot"></div>
+        <span class="board-item-tag">⚡ TOP</span>
+        <span class="board-item-price">$149</span>
+      </div>
+      <div class="board-item">
+        <span class="board-item-idx">02</span>
+        <span class="board-item-name">Golden Fries</span>
+        <div class="board-item-dot"></div>
+        <span class="board-item-tag">🧀 LOADED</span>
+        <span class="board-item-price">$79</span>
+      </div>
+      <div class="board-item">
+        <span class="board-item-idx">03</span>
+        <span class="board-item-name">Crispy Strips</span>
+        <div class="board-item-dot"></div>
+        <span class="board-item-tag">🔥 NUEVO</span>
+        <span class="board-item-price">$99</span>
+      </div>
+      <div class="board-item">
+        <span class="board-item-idx">04</span>
+        <span class="board-item-name">Double Smash</span>
+        <div class="board-item-dot"></div>
+        <span class="board-item-tag">💀 BRUTAL</span>
+        <span class="board-item-price">$169</span>
+      </div>
+      <div class="board-item">
+        <span class="board-item-idx">05</span>
+        <span class="board-item-name">Bolt Combo</span>
+        <div class="board-item-dot"></div>
+        <span class="board-item-price">$199</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ FULL IMAGE STRIP ═══════════ -->
+  <div class="section s-imgstrip">
+    <img src="assets/french_fries.png" alt="Golden Fries BOLT" id="strip-img">
+    <div class="imgstrip-label">
+      <i class="fa-solid fa-fire"></i>
+      Golden Fries — La adición más peligrosa del menú
+    </div>
+  </div>
+
+  <!-- ═══════════ S4: CHICKEN SPLIT ═══════════ (reversed) -->
+  <section class="section s-split" id="s-chicken">
+    <div class="split-right" style="order:-1;">
+      <img src="assets/crispy_chicken.png" alt="Crispy Strips BOLT" id="chicken-img">
+    </div>
+    <div class="split-left" style="background: var(--red);">
+      <span class="split-label" style="color:rgba(248,244,239,.5);">Pollo · Triple crunch</span>
+      <h2 style="color:var(--white);">Crispy<br><em style="color:var(--yellow);">Strips</em></h2>
+      <p class="split-body" style="color:rgba(248,244,239,.65);">
+        Marinadas 24 horas en especias secretas, rebozadas en triple capa de panko crujiente y fritas a la perfección. Con salsa BBQ de la casa.
+      </p>
+      <button class="btn-dark" style="border-color:var(--white); color:var(--white);">
+        Ordenar ahora
+      </button>
+      <div class="split-num" style="color:rgba(248,244,239,.06);">02</div>
+    </div>
+  </section>
+
+  <!-- ═══════════ S5: QUOTE ═══════════ -->
+  <section class="section s-quote" id="s-quote">
+    <div class="quote-inner">
+      <span class="quote-label">La filosofía BOLT</span>
+      <p class="quote-text" id="quote-text">
+        <span class="word"><span>La</span></span>
+        <span class="word"><span>vida</span></span>
+        <span class="word highlight"><span>es</span></span>
+        <span class="word highlight"><span>muy</span></span>
+        <span class="word highlight"><span>corta</span></span>
+        <span class="word"><span>para</span></span>
+        <span class="word"><span>comer</span></span>
+        <span class="word highlight"><span>aburrido.</span></span>
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══════════ S6: ORDER CTA ═══════════ -->
+  <section class="section s-order" id="s-order">
+    <span class="order-bg-text">BOLT</span>
+    <h2 class="order-title">¿Ya<br>Tienes<br><span>Hambre?</span></h2>
+    <p class="order-sub">
+      Ordena en línea en menos de 2 minutos. Entrega en tu puerta o recoge en tienda. Sin excusas.
+    </p>
+    <button class="btn-order">ORDENAR AHORA</button>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <a href="#" class="foot-logo">BOLT<span>.</span></a>
+    <span class="foot-copy">&copy; 2026 BOLT FAST FOOD — All flavors reserved.</span>
+    <div class="foot-links">
+      <a href="#"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+      <a href="#"><i class="fa-brands fa-youtube"></i></a>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
